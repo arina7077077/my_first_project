@@ -1,12 +1,10 @@
 <?php
 
-require_once 'model.php';
+require_once "../interfaces/IModel.php";
 
-class Circle extends Model
+class Circle implements IModel
 {
     public float $radius;
-    public $perimeter;
-    public $square;
 
     public const PI = 3.14;
 
@@ -15,12 +13,12 @@ class Circle extends Model
         $this->radius = $radius;
     }
 
-    public function getTableName(): string
+    public function getTableName() : string
     {
         return 'circle';
     }
 
-    public function perimeter(): float|int
+    public function perimeter()
     {
         return $this->radius * self::PI * 2;
     }

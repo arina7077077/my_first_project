@@ -1,6 +1,6 @@
 <?php
 
-interface Imodel {
+interface IModel {
 
     public function Square();
 

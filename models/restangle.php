@@ -1,8 +1,8 @@
 <?php
 
-require_once 'model.php';
+require_once "../interfaces/IModel.php";
 
-class Restangle extends Model {
+class Restangle implements Imodel {
 
     public $a;
     public $b;
@@ -23,7 +23,7 @@ class Restangle extends Model {
         return 'restangle';
     }
 
-    public function Square() {
+    public function square() {
         $square = $this->a * $this->b;
         return $square;
     }
