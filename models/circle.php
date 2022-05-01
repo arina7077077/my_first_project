@@ -2,30 +2,32 @@
 
 require_once 'model.php';
 
-class Circle extends Model {
-
-    public $radius;
+class Circle extends Model
+{
+    public float $radius;
     public $perimeter;
     public $square;
 
-    const PI = 3.14;
+    public const PI = 3.14;
 
-    public function __construct(float $radius) {
+    public function __construct(float $radius)
+    {
         $this->radius = $radius;
     }
 
-    public function getTableName() {
+    public function getTableName(): string
+    {
         return 'circle';
     }
 
-    public function Perimeter() {
-        $perimeter = $this->radius * $this->PI * 2;
-        return $perimeter;
+    public function perimeter(): float|int
+    {
+        return $this->radius * self::PI * 2;
     }
 
-    public function Square() {
-        $square = $this->radius * $this->radius * $this->PI;
-        return $square;
+    public function square()
+    {
+        return $this->radius * $this->radius * self::PI;
     }
 
 }
