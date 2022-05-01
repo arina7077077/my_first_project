@@ -1,7 +1,8 @@
 <?php
 
-interface Imodel {
+interface Imodel 
+{
     public function Square();
     public function Perimeter();
-    public function Print();
+    s
 }
