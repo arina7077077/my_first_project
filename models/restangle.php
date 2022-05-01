@@ -2,30 +2,31 @@
 
 require_once "../interfaces/IModel.php";
 
-class Restangle implements Imodel {
+class Restangle implements Imodel 
+{
 
     public $a;
     public $b;
-    public $perimeter;
-    public $square;
 
-    public function __construct(float $a, $b) {
+    public function __construct(float $a, $b) 
+    {
         $this->a = $a;
         $this->b = $b;
     }
 
-    public function perimeter() {
-        $perimeter = 2 * ($this->a + $this->b);
-        return $perimeter;
+    public function perimeter() 
+    {
+        return $this->a + $this->b;
     }
 
-    public function getTableName() {
+    public function getTableName(): string 
+    {
         return 'restangle';
     }
 
-    public function square() {
-        $square = $this->a * $this->b;
-        return $square;
+    public function square() 
+    {
+        return $this->a * $this->b;
     }
 
 }
