@@ -2,7 +2,9 @@
 
 interface IModel {
 
-    public function Square();
+    public function square();
 
-    public function Perimeter();
+    public function perimeter();
+    
+    public function getInfo();
 }

@@ -1,6 +1,6 @@
 <?php
+require_once '../interfaces/IModel.php';
 
-require_once "../interfaces/IModel.php";
 
 class Circle implements IModel
 {
@@ -13,19 +13,21 @@ class Circle implements IModel
         $this->radius = $radius;
     }
 
-    public function getTableName() : string
-    {
-        return 'circle';
-    }
-
-    public function perimeter()
+    public function perimeter() : int|float
     {
         return $this->radius * self::PI * 2;
     }
 
-    public function square()
+    public function square(): int|float
     {
         return $this->radius * $this->radius * self::PI;
+    }
+    
+    public function getInfo() 
+    {
+        echo "периметр окружности = " . $this->perimeter() . "<br>";
+        echo "площадь круга = " . $this->square() . "<br>";
+        
     }
 
 }

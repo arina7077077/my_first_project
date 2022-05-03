@@ -1,12 +1,12 @@
 <?php
 
-require_once "../interfaces/IModel.php";
+require_once '../interfaces/IModel.php';
 
 class Restangle implements Imodel 
 {
 
-    public $a;
-    public $b;
+    public float $a;
+    public float $b;
 
     public function __construct(float $a, $b) 
     {
@@ -14,19 +14,20 @@ class Restangle implements Imodel
         $this->b = $b;
     }
 
-    public function perimeter() 
+    public function perimeter() : int|float
     {
         return $this->a + $this->b;
     }
 
-    public function getTableName(): string 
-    {
-        return 'restangle';
-    }
-
-    public function square() 
+    public function square() : int|float
     {
         return $this->a * $this->b;
     }
-
+    
+    public function getInfo() 
+    {
+        echo "периметр прямоугольника = " . $this->perimeter() . "<br>";
+        echo "площадь прямоугольника = " . $this->square() . "<br>";
+        
+    }
 }
